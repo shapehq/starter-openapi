@@ -1,0 +1,22 @@
+name: Lint
+on:
+  pull_request:
+    types: [opened, synchronize]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Spectral
+        run: npm install -g @stoplight/spectral-cli
+      - name: Run Spectral
+        run: |
+          spectral lint *.{json,yml,yaml}\
+            --ignore-unknown-format\
+            --fail-severity warn\
+            --format github-actions

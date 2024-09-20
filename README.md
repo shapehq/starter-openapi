@@ -1,12 +1,15 @@
-# starter-openapi
+# 🚀 starter-openapi
 
-This repo provides a starting point for documenting an API.
+This repository contains a starting point for documenting an API with [OpenAPI](https://www.openapis.org) and displaying the documentation using [Framna Docs](https://github.com/shapehq/framna-docs).
 
-You can find more info about how to use Shape Docs and OpenAPI in this article: [Shape Docs](https://shapedk.atlassian.net/wiki/spaces/DEVELOPERS/pages/3795615745/Shape+Docs).
+## 📦 Contents of the repository
 
-## The repo contains
+The repository contains the following files.
 
-1. An openapi.yml to host your API spec. You can add more if needed.
-2. A configuration file for Shape Docs that configures the project name and the icon.
-3. A GitHub Workflow that runs Spectral linter on PRs.
- 
+|File|Description|
+|:-|:-|
+|[openapi.yml](./blob/main/openapi.yml)|An OpenAPI specification that documents the API.|
+|[.framna-docs.yml](./blob/main/.framna-docs.yml)|A configuration file that specifies the project name and icon to show on Framna Docs. For more information, see [the documentation of Framna Docs](https://github.com/shapehq/framna-docs/wiki/Adding-Documentation-to-Framna-Docs#customize-the-project).|
+|[icon.png](blob/main/icon.png)|Thee icon displayed on Framna Docs.|
+|[.spectral.yaml](./blob/main/.spectral.yaml)| A configuration file for the open-source [Spectral](https://stoplight.io/open-source/spectral) linter that can be used to validate the OpenAPI specification in [openapi.yml](./blob/main/openapi.yml).|
+|[.github/workflows/lint.yml](./blob/main/.github/workflows/lint.yml)| A workflow that lints the OpenAPI specification in pull requests using the [Spectral](https://stoplight.io/open-source/spectral) linter.|

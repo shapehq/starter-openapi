@@ -1,15 +1,23 @@
 openapi: "3.0.0"
 info:
   version: 1.0.0
-  title: Swagger Petstore Foo
+  title: Swagger Petstore
+  description: This is a sample server for a pet store.
   license:
     name: MIT
+  contact:
+    name: API Support
+    url: https://example.com/support
+    email: support@example.com
 servers:
   - url: http://petstore.swagger.io/v1
+tags:
+  - name: pets
 paths:
   /pets:
     get:
       summary: List all pets
+      description: Retrieve a list of all the pets in the store.
       operationId: listPets
       tags:
         - pets
@@ -42,6 +50,7 @@ paths:
                 $ref: "#/components/schemas/Error"
     post:
       summary: Create a pet
+      description: Create a new pet.
       operationId: createPets
       tags:
         - pets
@@ -57,6 +66,7 @@ paths:
   /pets/{petId}:
     get:
       summary: Info for a specific pet
+      description: Load the details of the specified pet.
       operationId: showPetById
       tags:
         - pets
